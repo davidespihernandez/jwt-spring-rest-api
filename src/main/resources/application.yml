@@ -7,6 +7,9 @@ spring:
   jackson:
     serialization:
       INDENT_OUTPUT: true
+  h2:
+    console:
+      enabled: true
 
 jwt:
   header: Authorization
