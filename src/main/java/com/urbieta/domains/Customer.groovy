@@ -2,7 +2,6 @@ package com.urbieta.domains
 
 import com.urbieta.JwtDemoApplication
 import com.urbieta.repository.CustomerRepository
-import org.springframework.context.ApplicationContext
 
 import javax.persistence.*
 

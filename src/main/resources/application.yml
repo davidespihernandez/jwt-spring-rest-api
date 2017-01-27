@@ -10,6 +10,14 @@ spring:
   h2:
     console:
       enabled: true
+  datasource:
+    url: jdbc:mysql://localhost/fueling
+    username: root
+    password: Alicante15!
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 jwt:
   header: Authorization
@@ -19,6 +27,7 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+
 
 #logging:
 #  level:

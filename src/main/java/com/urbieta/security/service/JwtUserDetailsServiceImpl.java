@@ -1,13 +1,13 @@
 package com.urbieta.security.service;
 
+import com.urbieta.domains.SecUser;
+import com.urbieta.repository.SecUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import com.urbieta.model.security.User;
 import com.urbieta.security.JwtUserFactory;
-import com.urbieta.security.repository.UserRepository;
 
 /**
  * Created by stephan on 20.03.16.
@@ -16,16 +16,16 @@ import com.urbieta.security.repository.UserRepository;
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    private SecUserRepository secUserRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        SecUser secUser = secUserRepository.findOneByUsername(username);
 
-        if (user == null) {
+        if (secUser == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
         } else {
-            return JwtUserFactory.create(user);
+            return JwtUserFactory.create(secUser);
         }
     }
 }
