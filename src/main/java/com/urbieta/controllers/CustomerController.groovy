@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController
  * Created by david on 1/26/2017.
  */
 @RestController
-@RequestMapping(path = "/api/customers")
+@RequestMapping(path = "/api/customer")
 @CrossOrigin
 class CustomerController {
     @Autowired CustomerService customerService

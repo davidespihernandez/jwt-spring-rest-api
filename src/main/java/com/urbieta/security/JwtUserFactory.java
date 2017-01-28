@@ -5,8 +5,6 @@ import java.util.stream.Collectors;
 
 import com.urbieta.domains.SecRole;
 import com.urbieta.domains.SecUser;
-import com.urbieta.model.security.Authority;
-import com.urbieta.model.security.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
