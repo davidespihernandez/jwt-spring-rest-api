@@ -55,4 +55,12 @@ class CustomerService {
 		return(customer)
 	}
 
+	def deleteCustomer(Long customerId){
+		Customer customer = findCustomerById(customerId)
+		if(!customer){
+			return(null)
+		}
+		customer.delete()
+	}
+
 }
